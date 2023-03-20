@@ -3,6 +3,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const date = require(__dirname + "/date.js")
 const mongoose = require("mongoose")
+const _ = require('lodash')
 
 const app = express()
 
@@ -41,10 +42,7 @@ const defaultItem = [item1,item2,item3]
 //GET Home route
 app.get("/", function(req, res){
   
-  run()
-  async function run() {
-
-    await Item.find({}).then((foundItems) => {
+     Item.find({}).then((foundItems) => {
 
       if(foundItems.length === 0){
         Item.insertMany(defaultItem).catch((err)) ; {
@@ -55,7 +53,6 @@ app.get("/", function(req, res){
       res.render("list", {listOfTitle: "Today", newListItems: foundItems})
     }
     })
-  } 
 
 });
 
@@ -100,7 +97,7 @@ app.post("/", function (req,res) {
 
   app.get("/:customListName", function (req,res) {
 
-    const customListName = req.params.customListName
+    const customListName = _.capitalize(req.params.customListName)
 
     List.findOne({name: customListName}).exec().then((foundList) => {
 
