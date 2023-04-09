@@ -41,5 +41,6 @@ Also make sure that you have started the mongoDB server on localhost.
 Go to http://localhost:3000/ and you are ready to use.
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/atayiilmaz/todolistapp-v1/blob/main/public/img/Screenshot%202023-04-09%20151128.png)
+![App Screenshot](https://github.com/atayiilmaz/todolistapp-v1/blob/main/public/img/Screenshot%202023-04-09%20151154.png)
 
